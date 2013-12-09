@@ -52,7 +52,7 @@
     	Individual Conversation Statistic file:
     		Statistics.txt:
     			TOTAL AMOUNT OF MESSAGES SENT: Total amount of messages sent in conversation.
-    			TOTAL AMOUNT OF MESSAGES RECIEVED: Total amount of messages received in conversation.
+    			TOTAL AMOUNT OF MESSAGES RECEIVED: Total amount of messages received in conversation.
     			TOTAL AMOUNT OF MESSAGES: Total amount of messages in conversation.
     			RANGING FROM: Date of first message in conversation.
     			TO: Date of latest message in conversation.
