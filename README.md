@@ -99,7 +99,7 @@
 			-In my case, my phone's SSH server address is 192.168.1.4 and the user is root
 				Usage: scp -r user@address:folder/to/fetch path/to/new/location
 
-				scp -r root@192.168.1.4:/data/data/com.android.providers.telephony/app_parts path/to/ANDROID-SMS/
+				scp -r root@192.168.1.4:/data/data/com.android.providers.telephony/app_parts path/to/ANDROID-SMS/app_parts
 				Enter password: (Default is set to admin)
 				**If there are alot of files here, this might take a while**
 
@@ -108,9 +108,12 @@
 				
 				scp root@192.168.1.4:/data/data/com.android.providers.telephony/databases/mmssms.db path/to/ANDROID-SMS/
 				Enter password: (Default is set to admin)
-				
-		5. Now you should have the messageExtract.py script, the mmssms.db file, and the app_parts folder all in the same place. 
-
+			
+			 **Now you should have the messageExtract.py script, the mmssms.db file, and the app_parts
+			 folder all in the same place.**
+			 
+		5. Run messageExtract.py
+			Usage: python path/to/ANDROID-SMS/messageExtract.py path/to/ANDROID-SMS 
 ========================================================================================================================
 **FUTURE EXPLORATIONS**
 	
