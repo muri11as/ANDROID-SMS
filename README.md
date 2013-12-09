@@ -1,5 +1,7 @@
 **ANDROID SMS AND MMS RETRIEVAL**
 ========================================================================================================================
+**SET-UP AND LOGISTICS**
+
 
     Requirements to run this tool:
 	  -python 2.7
@@ -15,10 +17,21 @@
     			-Getting the numbers the MMS messages were associated with wasn't spelled out anywhere. 
     			Using the same message id from two different tables I was able to construct a relationship.
     			-Finding the right attributes to properly display a message as an object.
-    	-
 
 ========================================================================================================================
+**PURPOSE AND INSIGHT**
 
+	This tool was built with the purpose of extracting SMS and MMS messages from a ROOTED Android device.
+	The tool takes a single database file found in the Android Filesystem, which is only accesible by rooting
+	the device, and extracts its contents in SMS and MMS form. MMS are multimedia messages which include pictures,
+	audio, video, and contact Vcards. SMS are regular text messages. It would be used for example, if a device
+	is cosmetically damaged and does not allow investigators to physically see messages on the device itself.
+	If the mmssms.db-journal file is available, deleted SMS and MMS messages might be possible to view, using this tool.
+
+
+
+
+========================================================================================================================
     There are numerous methods in which to root android devices, and how to access the file system.
     The method I chose was to download a rootkit, apply it to the device and then copy over the necessary files over SSH.
     
@@ -68,17 +81,45 @@
     					Total amount of messages & files in device.	
     					
 ========================================================================================================================
+**TO RUN THE TOOL**
 
 		1. Root android device
+			-Method of your choice.
+			-Tons of options.
+
 		2. Install && open SSHDroid (ssh server)
 			-Make note of the Address field inside SSHDroid we will need this.
 			-Make sure SSHDroid is running
-		3. Download SMSMMS folder from github: https://github.com/muri11as/ANDROID-SMS
-		4. open terminal 
+
+		3. Download SMSMMS folder from github:
+			-git clone https://github.com/muri11as/ANDROID-SMS
+
+		4. Open a new Terminal window
 			-Copy over app_parts folder from android device with the following command:
+			-In my case, my phone's SSH server address is 192.168.1.4 and the user is root
+				Usage: scp -r user@address:folder/to/fetch path/to/new/location
 				scp -r root@192.168.1.4:/data/data/com.android.providers.telephony/app_parts path/to/ANDROID-SMS/
 				Enter password: (Default is set to admin)
+				**If there are alot of files here, this might take a while**
+
 			-Copy over mmssms.db from android device with the following command:
+				scp user@address:/path/to/file /path/to/new/location
 				scp root@192.168.1.4:/data/data/com.android.providers.telephony/databases/mmssms.db path/to/ANDROID-SMS/
 				Enter password: (Default is set to admin)
+				
 		5. Now you should have the messageExtract.py script, the mmssms.db file, and the app_parts folder all in the same place. 
+
+========================================================================================================================
+**FUTURE EXPLORATIONS**
+	
+	-Was not able to find the mmssms.db-journal file in which deleted messages would be stored.
+	More thorough research in this topic would be needed. If this file was found, we could run this tool,
+	changing the name of the database to mmssms.db-journal, and the same results would be expected,
+	this time with deleted SMS and MMS messages.
+	
+	-Perhaps running the app_parts folder through an exif analyzing tool would give forensic examiners
+	a more thorough insight into the image files being sent and received from the device. This could be
+	an extension to this project, although for the purpose of retrieving SMS and MMS messages it was not
+	essential to this project. 
+	
+	
