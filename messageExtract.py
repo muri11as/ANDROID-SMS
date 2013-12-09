@@ -5,7 +5,7 @@ Professor Joel Fernandez
 Final Project Fall 2013
 ANDROID-SMS-MMS-EXTRACTOR
 
-USAGE: messageExtract.py /path/to/SMSMMS folder
+USAGE: messageExtract.py /path/to/ANDROID-SMS
 '''
 import operator
 import sys
