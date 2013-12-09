@@ -3,7 +3,7 @@ Author: Cesar Murillas
 CS6963 Digital Forensics
 Professor Joel Fernandez
 Final Project Fall 2013
-Android SMS
+ANDROID-SMS-MMS-EXTRACTOR
 
 USAGE: messageExtract.py /path/to/SMSMMS folder
 '''
@@ -114,7 +114,7 @@ class SMSconvo:
 		self.total = total				
 		line = "***STATISTICS FOR THIS CONVERSATION***\n\n"
 		line1 = "TOTAL AMOUNT OF MESSAGES SENT: "+str(sent)+'\n\n'
-		line2 = "TOTAL AMOUNT OF MESSAGES RECIEVED: "+str(rec)+'\n\n'
+		line2 = "TOTAL AMOUNT OF MESSAGES RECEIVED: "+str(rec)+'\n\n'
 		line3 = "TOTAL AMOUNT OF MESSAGES: "+str(total)+'\n\n'
 		line4 = "RANGING FROM: "+self.__msgs[0].getDate()+'\n\n'
 		line5 = "TO: "+self.__msgs[total-1].getDate()+'\n\n'
