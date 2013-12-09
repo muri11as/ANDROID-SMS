@@ -22,7 +22,7 @@
 **PURPOSE AND INSIGHT**
 
 	This tool was built with the purpose of extracting SMS and MMS messages from a ROOTED Android device.
-	The tool takes a single database file found in the Android Filesystem, which is only accesible by rooting
+	The tool takes a single database file found in the Android Filesystem, which is only accessible by rooting
 	the device, and extracts its contents in SMS and MMS form. MMS are multimedia messages which include pictures,
 	audio, video, and contact Vcards. SMS are regular text messages. It would be used for example, if a device
 	is cosmetically damaged and does not allow investigators to physically see messages on the device itself.
@@ -42,7 +42,7 @@
     		/data/data/com.android.providers.telephony/app_parts/
     
     The first file is the database in which all sms and mms messages are stored.
-    The second is the folder in which all of the media files sent and recieved via MMS messages are stored.(ACTUAL FILES)
+    The second is the folder in which all of the media files sent and received via MMS messages are stored.(ACTUAL FILES)
 
 ========================================================================================================================
 
@@ -73,7 +73,7 @@
     		MMSHISTOGRAM.TXT:
     			-Displays Histogram showing the amount of MMS messages associated with a specific
     			 Phone Number, and the amount of messages associated. The number with the most
-    			 messsages will most likely be the number of the device you are examining.
+    			 messages will most likely be the number of the device you are examining.
     			 All other fields are effectively sent MMS messages.
     				Format:
     					Phone Number: Amount of messages and corresponding files associated.
