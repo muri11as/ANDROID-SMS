@@ -81,7 +81,7 @@
     					Total amount of messages & files in device.	
     					
 ========================================================================================================================
-**TO RUN THE TOOL**
+**RUNNING THE TOOL**
 
 		1. Root android device
 			-Method of your choice.
@@ -98,12 +98,14 @@
 			-Copy over app_parts folder from android device with the following command:
 			-In my case, my phone's SSH server address is 192.168.1.4 and the user is root
 				Usage: scp -r user@address:folder/to/fetch path/to/new/location
+
 				scp -r root@192.168.1.4:/data/data/com.android.providers.telephony/app_parts path/to/ANDROID-SMS/
 				Enter password: (Default is set to admin)
 				**If there are alot of files here, this might take a while**
 
 			-Copy over mmssms.db from android device with the following command:
-				scp user@address:/path/to/file /path/to/new/location
+				Usage: scp user@address:/path/to/file /path/to/new/location
+				
 				scp root@192.168.1.4:/data/data/com.android.providers.telephony/databases/mmssms.db path/to/ANDROID-SMS/
 				Enter password: (Default is set to admin)
 				
